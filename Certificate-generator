@@ -1,0 +1,33 @@
+from fpdf import FPDF
+
+# Create a PDF object
+pdf = FPDF()
+
+# Add a new page to the PDF
+pdf.add_page()
+
+# Set the font and font size
+pdf.set_font('Arial', 'B', 16)
+
+# Write the certificate title
+pdf.cell(0, 10, 'Certificate of Completion', 0, 1, 'C')
+
+# Set the font size for the certificate content
+pdf.set_font('Arial', '', 12)
+
+# Write the recipient's name
+pdf.cell(0, 10, 'This certifies that', 0, 1, 'C')
+pdf.cell(0, 10, 'Bajrang', 0, 1, 'C')
+
+# Write the course name
+pdf.cell(0, 10, 'has successfully completed the', 0, 1, 'C')
+pdf.cell(0, 10, 'Python Programming Course', 0, 1, 'C')
+
+# Set the font size for the certificate date
+pdf.set_font('Arial', '', 10)
+
+# Write the certificate date
+pdf.cell(0, 10, 'Awarded on March 11, 2023', 0, 1, 'C')
+
+# Save the PDF file
+pdf.output('certificate.pdf', 'F')
